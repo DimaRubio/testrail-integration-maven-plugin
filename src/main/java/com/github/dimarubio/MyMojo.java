@@ -22,13 +22,13 @@ public class MyMojo
     @Parameter( defaultValue = "${project.build.directory}", property = "getTestCasesIDFromRun.outputDir", required = true )
     private File outputDirectory;
 
-    @Parameter( property = "getTestCasesIDFromRun.url", required = true )
+    @Parameter( property = "testRailURL", required = true )
     private String url;
 
-    @Parameter( property = "getTestCasesIDFromRun.userEmail", required = true )
+    @Parameter( property = "userEmail", required = true )
     private String userEmail;
 
-    @Parameter( property = "getTestCasesIDFromRun.password", required = true )
+    @Parameter( property = "password", required = true )
     private String password;
 
     @Parameter( property = "numberOfTestRailRun", required = true )
