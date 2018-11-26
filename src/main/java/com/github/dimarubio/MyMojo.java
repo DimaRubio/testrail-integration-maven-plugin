@@ -31,7 +31,7 @@ public class MyMojo
     @Parameter( property = "password", required = true )
     private String password;
 
-    @Parameter( property = "numberOfTestRailRun", required = true )
+    @Parameter( defaultValue = "0", property = "numberOfTestRailRun", required = false )
     private String numberOfTestRailRun;
 
     public void execute()
