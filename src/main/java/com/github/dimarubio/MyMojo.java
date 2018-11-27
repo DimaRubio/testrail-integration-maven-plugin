@@ -23,7 +23,7 @@ public class MyMojo
     private File outputDirectory;
 
     @Parameter( property = "testRailURL", required = true )
-    private String url;
+    private String testRailURL;
 
     @Parameter( property = "userEmail", required = true )
     private String userEmail;
@@ -41,7 +41,7 @@ public class MyMojo
         getLog().info("Testrail run number: " + numberOfTestRailRun);
         try
         {
-            TestRailHelper testRailHelper = new TestRailHelper( url, userEmail, password, numberOfTestRailRun);
+            TestRailHelper testRailHelper = new TestRailHelper( testRailURL, userEmail, password, numberOfTestRailRun);
 //            testRailHelper.setNumberOfTestRailRun();
             String testCasesTags = "";
             for (Long id: testRailHelper.getTestCasesIDFromRun()) {
