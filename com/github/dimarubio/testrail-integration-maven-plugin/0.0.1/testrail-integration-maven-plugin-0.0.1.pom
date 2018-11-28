@@ -37,6 +37,31 @@
     </repository>
   </distributionManagement>
 
+  <!--<repositories>-->
+  <!--<repository>-->
+  <!--<id>testrail-integration-maven-plugin-mvn-repo</id>-->
+  <!--<url>https://github.com/DimaRubio/testrail-integration-maven-plugin/tree/mvn-repo/</url>-->
+  <!--<snapshots>-->
+  <!--<enabled>true</enabled>-->
+  <!--<updatePolicy>always</updatePolicy>-->
+  <!--</snapshots>-->
+  <!--</repository>-->
+  <!--</repositories>-->
+  <!--<pluginRepositories>-->
+    <!--<pluginRepository>-->
+      <!--<id>testrail-integration-maven-plugin</id>-->
+      <!--<url>https://github.com/DimaRubio/testrail-integration-maven-plugin/raw/mvn-repo/</url>-->
+      <!--<releases>-->
+        <!--<enabled>true</enabled>-->
+        <!--&lt;!&ndash;<updatePolicy>always</updatePolicy>&ndash;&gt;-->
+      <!--</releases>-->
+      <!--<snapshots>-->
+        <!--<enabled>true</enabled>-->
+        <!--&lt;!&ndash;<updatePolicy>always</updatePolicy>&ndash;&gt;-->
+      <!--</snapshots>-->
+    <!--</pluginRepository>-->
+  <!--</pluginRepositories>-->
+
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
