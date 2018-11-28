@@ -141,7 +141,7 @@
         <configuration>
           <message>Maven artifacts for ${project.version}</message>
           <noJekyll>true</noJekyll>
-          <outputDirectory>${project.build.directory}/mvn-repo/com/github/dimarubio/testrail-integration-maven-plugin</outputDirectory>
+          <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
           <branch>refs/heads/mvn-repo</branch>
           <includes><include>**/*</include></includes>
           <!--repo title-->
