@@ -28,7 +28,6 @@ public class MyMojo
     public void execute()
         throws MojoExecutionException
     {
-        System.out.println("BORODA");
         File f = outputDirectory;
 
         if ( !f.exists() )
