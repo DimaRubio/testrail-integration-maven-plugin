@@ -42,11 +42,13 @@ public class TestRailHelper {
 
     public ArrayList<Long> getTestCasesIDFromRun() throws IOException, APIException {
         ArrayList<Long> listTestsId = new ArrayList<Long>();
-        JSONArray testsArray = (JSONArray) client.sendGet("get_tests/" + getNumberOfTestRailRun());
-        for (Object testDetails : testsArray) {
-            JSONObject test = (JSONObject) testDetails;
-            Long id = (Long) test.get("case_id");
-            listTestsId.add(id);
+        if ( numberOfTestRailRun > 0) {
+            JSONArray testsArray = (JSONArray) client.sendGet("get_tests/" + getNumberOfTestRailRun());
+            for (Object testDetails : testsArray) {
+                JSONObject test = (JSONObject) testDetails;
+                Long id = (Long) test.get("case_id");
+                listTestsId.add(id);
+            }
         }
         return listTestsId;
     }
