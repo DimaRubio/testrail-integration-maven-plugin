@@ -6,7 +6,7 @@ Create a property file with name 'testCaseIDFromRUN.properties' in project build
 Quickstart
 ----------
 
-Add the following to your POM file:
+1) Add the following to your POM file:
 ```xml
     <pluginRepositories>
         <pluginRepository>
@@ -48,8 +48,9 @@ Add the following to your POM file:
         </executions>
     </plugin>
 ```
-Create Run in TestRail and get its ID (Example: 1).
-All configuration parameters can be set from the command line by referencing a system property that the user sets via the -D option.
+2) Create Run in TestRail and get its ID (Example: 1).
+
+3) All configuration parameters can be set from the command line by referencing a system property that the user sets via the -D option.
 Example: mvn compile -DnumberOfTestRailRun=1
 After that you can see in terminal something like that:
 ```xml
