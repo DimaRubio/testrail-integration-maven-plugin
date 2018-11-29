@@ -6,7 +6,7 @@ Create a property file with name 'testCaseIDFromRUN.properties' in project build
 Quickstart
 ----------
 
-Add the following to your POM file, updating the `<glue>` definition to point to your glue code packages:
+Add the following to your POM file:
 ```xml
     <pluginRepositories>
         <pluginRepository>
