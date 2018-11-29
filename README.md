@@ -50,4 +50,11 @@ Add the following to your POM file:
 ```
 All configuration parameters can be set from the command line by referencing a system property that the user sets via the -D option.
 Example: mvn compile -DnumberOfTestRailRun=0
+After that you can see in terminal something like that:
+```xml
+[INFO] --- testrail-integration-maven-plugin:0.0.1:getTestCasesIDFromRun (default) @ vdr-tests ---
+[INFO] Start preparing property file with testcases ID
+[INFO] Testrail run number: 0
+[INFO] File testCaseIDFromRUN.properties is generated
+```
 
