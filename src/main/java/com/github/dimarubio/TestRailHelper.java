@@ -10,7 +10,7 @@ import java.util.Map;
 
 /***
  * @numberOfTestRailRun = 0 - test result won't send to TestRail. This value is got from system variable "numberOfTestRailRun"
- *                              and should contains number of existing test Run
+ *                              or from plugin configuration and should contains number of existing test Run in TestRail
   */
 public class TestRailHelper {
     private Map testResultData = new HashMap();
@@ -22,7 +22,6 @@ public class TestRailHelper {
         client.setUser(userEmail);
         client.setPassword(password);
         this.numberOfTestRailRun = Integer.parseInt(numberOfTestRailRun);
-//        setNumberOfTestRailRun();
     }
 
     public APIClient getClient() {
@@ -32,13 +31,6 @@ public class TestRailHelper {
     public Integer getNumberOfTestRailRun() {
         return numberOfTestRailRun;
     }
-
-//    public void setNumberOfTestRailRun() {
-//        String numberOfTestRailRun = System.getProperty("numberOfTestRailRun");
-//        if (numberOfTestRailRun  != null ) {
-//            this.numberOfTestRailRun = Integer.parseInt(System.getProperty("numberOfTestRailRun"));
-//        }
-//    }
 
     public ArrayList<Long> getTestCasesIDFromRun() throws IOException, APIException {
         ArrayList<Long> listTestsId = new ArrayList<Long>();

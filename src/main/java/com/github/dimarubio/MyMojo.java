@@ -16,9 +16,6 @@ import java.io.File;
 public class MyMojo
     extends AbstractMojo
 {
-    /**
-     * Location of the file.
-     */
     @Parameter( defaultValue = "${project.build.directory}", property = "getTestCasesIDFromRun.outputDir", required = true )
     private File outputDirectory;
 
@@ -42,10 +39,8 @@ public class MyMojo
         try
         {
             TestRailHelper testRailHelper = new TestRailHelper( testRailURL, userEmail, password, numberOfTestRailRun);
-//            testRailHelper.setNumberOfTestRailRun();
             String testCasesTags = "";
             for (Long id: testRailHelper.getTestCasesIDFromRun()) {
-//                testCasesTags = testCasesTags + "@C" + id + ",";
                 testCasesTags = String.format("%s@C%s,", testCasesTags, id);
             }
             new PropertiesHelper().saveProperties("testCasesTags", testCasesTags);
@@ -56,42 +51,5 @@ public class MyMojo
             throw new MojoExecutionException( "Error ", e );
         }
         getLog().info("File testCaseIDFromRUN.properties is generated");
-
-
-
-//        File f = outputDirectory;
-//
-//        if ( !f.exists() )
-//        {
-//            f.mkdirs();
-//        }
-//
-//        File touch = new File( f, "touch.txt" );
-//
-//        FileWriter w = null;
-//        try
-//        {
-//            w = new FileWriter( touch );
-//
-//            w.write( "touch.txt" );
-//        }
-//        catch ( IOException e )
-//        {
-//            throw new MojoExecutionException( "Error creating file " + touch, e );
-//        }
-//        finally
-//        {
-//            if ( w != null )
-//            {
-//                try
-//                {
-//                    w.close();
-//                }
-//                catch ( IOException e )
-//                {
-//                    // ignore
-//                }
-//            }
-//        }
     }
 }
