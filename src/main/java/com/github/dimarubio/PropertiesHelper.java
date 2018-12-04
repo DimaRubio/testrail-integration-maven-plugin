@@ -3,6 +3,7 @@
  */
 package com.github.dimarubio;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -15,7 +16,9 @@ public class PropertiesHelper {
         Properties prop = new Properties();
         OutputStream output = null;
         try {
-            output = new FileOutputStream("testCaseIDFromRUN.properties");
+            File propertyFile = new File(System.getProperty("user.dir"),"testCaseIDFromRUN.properties");
+            System.out.println(propertyFile.toString());
+            output = new FileOutputStream(propertyFile);
             prop.setProperty(tagName, tagValue);
             prop.store(output, null); // save properties to project root folder
         } catch (IOException io) {

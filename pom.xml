@@ -157,7 +157,7 @@
         <version>3.5.1</version>
         <configuration>
           <!--The goalPrefix parameter will set the goal prefix for the plugin that is specified in the descriptor.-->
-           <goalPrefix>testrail-integration-maven</goalPrefix>
+           <goalPrefix>testrail-integration</goalPrefix>
           <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
         </configuration>
         <executions>
