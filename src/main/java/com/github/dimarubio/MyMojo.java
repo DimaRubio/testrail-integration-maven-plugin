@@ -44,12 +44,12 @@ public class MyMojo
                 testCasesTags = String.format("%s@C%s,", testCasesTags, id);
             }
             new PropertiesHelper().saveProperties("testCasesTags", testCasesTags);
+            getLog().info("File testCaseIDFromRUN.properties is generated");
         }
         catch ( Exception e )
         {
             getLog().error(e.fillInStackTrace());
             throw new MojoExecutionException( "Error ", e );
         }
-        getLog().info("File testCaseIDFromRUN.properties is generated");
     }
 }
