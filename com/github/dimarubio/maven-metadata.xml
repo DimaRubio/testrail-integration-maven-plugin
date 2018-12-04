@@ -3,7 +3,7 @@
   <plugins>
     <plugin>
       <name>testrail-integration-maven-plugin Maven Plugin</name>
-      <prefix>testrail-integration-maven</prefix>
+      <prefix>testrail-integration</prefix>
       <artifactId>testrail-integration-maven-plugin</artifactId>
     </plugin>
   </plugins>
