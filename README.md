@@ -24,29 +24,30 @@ Quickstart
     </pluginRepositories>
 ```  
 ```xml
-    <plugin>
-        <groupId>com.github.dimarubio</groupId>
-        <artifactId>testrail-integration-maven-plugin</artifactId>
-        <version>0.0.1</version>
-        <configuration>
-            <!-- URL of your TestRail server -->
-            <testRailURL>https://example.com/</testRailURL>
-            <!-- User email in TestRail  -->
-            <userEmail>test@examole.com</userEmail>
-            <!-- User password in TestRail -->
-            <password>12345678</password>
-            <!-- Number of run in TestRail, with the default values = 0 -->
-            <!--<numberOfTestRailRun></numberOfTestRailRun>-->
-        </configuration>
-        <executions>
-            <execution>
-                <phase>validate</phase>
-                <goals>
-                    <goal>getTestCasesIDFromRun</goal>
-                </goals>
-            </execution>
-        </executions>
-    </plugin>
+            <plugin>
+                <groupId>com.github.dimarubio</groupId>
+                <artifactId>testrail-integration-maven-plugin</artifactId>
+                <version>0.0.2-SNAPSHOT</version>
+                <configuration>
+                    <!-- URL of your TestRail server -->
+                    <testRailURL>https://testrail.server/</testRailURL>
+                    <!-- User email in TestRail  -->
+                    <userEmail>test@test.com</userEmail>
+                    <!-- User password in TestRail -->
+                    <password>123456</password>
+                    <!-- Number of run in TestRail, with the default values = 0 -->
+                    <!--<numberOfTestRailRun></numberOfTestRailRun>-->
+                    <!--<outputDirectory>${project.basedir}</outputDirectory>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>getTestCasesIDFromRun</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 ```
 2) Create Run in TestRail and get its ID (Example: 1).
 
@@ -55,9 +56,9 @@ Example: mvn compile -DnumberOfTestRailRun=1
 
 After that you can see in terminal something like that:
 ```xml
-[INFO] --- testrail-integration-maven-plugin:0.0.1:getTestCasesIDFromRun (default) @ vdr-tests ---
+[INFO] --- testrail-integration-maven-plugin:0.0.2-SNAPSHOT:getTestCasesIDFromRun (default) @ vdr-tests ---
 [INFO] Start preparing property file with testcases ID
-[INFO] Testrail run number: 0
-[INFO] File testCaseIDFromRUN.properties is generated
+[INFO] Testrail run number: 1
+[INFO] File testCaseIDFromRUN.properties is generated to D:\ProjectBaseDir
 ```
 
