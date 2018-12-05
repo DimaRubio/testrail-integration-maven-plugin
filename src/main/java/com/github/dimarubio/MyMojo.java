@@ -20,7 +20,7 @@ import java.util.Properties;
 public class MyMojo
     extends AbstractMojo
 {
-    @Parameter( property = "outputDirectory", required = true )
+    @Parameter(defaultValue = "${project.basedir}")
     private File outputDirectory;
 
     @Parameter( property = "testRailURL", required = true )
