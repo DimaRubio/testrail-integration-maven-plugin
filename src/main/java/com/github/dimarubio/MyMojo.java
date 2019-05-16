@@ -35,10 +35,19 @@ public class MyMojo
     @Parameter( defaultValue = "0", property = "numberOfTestRailRun", required = false )
     private String numberOfTestRailRun;
 
+    @Parameter( defaultValue = "@C", property = "tagFormatPattern", required = false )
+    private String tagFormatPattern;
+
+    @Parameter( defaultValue = "testCasesTags", property = "keyPropertyTitle", required = false )
+    private String keyPropertyTitle;
+
+    public MyMojo() {
+    }
+
     public void execute()
         throws MojoExecutionException
     {
-        getLog().info("Start preparing property file with testcases ID");
+        getLog().info("Start preparing property file with test-cases ID");
         getLog().info("Testrail run number: " + numberOfTestRailRun);
         if (!outputDirectory.exists()) {
             outputDirectory.mkdirs();
@@ -48,9 +57,9 @@ public class MyMojo
             TestRailHelper testRailHelper = new TestRailHelper( testRailURL, userEmail, password, numberOfTestRailRun);
             String testCasesTags = "";
             for (Long id: testRailHelper.getTestCasesIDFromRun()) {
-                testCasesTags = String.format("%s@C%s,", testCasesTags, id);
+                testCasesTags = String.format("%s%s%s,", testCasesTags, tagFormatPattern, id);
             }
-            saveProperties("testCasesTags", testCasesTags);
+            saveProperties(keyPropertyTitle, testCasesTags);
             getLog().info("File testCaseIDFromRUN.properties is generated to " + outputDirectory.toString());
         }
         catch ( Exception e )
