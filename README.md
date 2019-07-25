@@ -38,6 +38,8 @@ Quickstart
                     <!-- Number of run in TestRail, with the default values = 0 -->
                     <!--<numberOfTestRailRun></numberOfTestRailRun>-->
                     <!--<outputDirectory>${project.basedir}</outputDirectory>-->
+                    <!--<tagFormatPattern>C</tagFormatPattern>-->
+                    <!--<keyPropertyTitle>tags</keyPropertyTitle>-->
                 </configuration>
                 <executions>
                     <execution>
